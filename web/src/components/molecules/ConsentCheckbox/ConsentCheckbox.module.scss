@@ -1,0 +1,65 @@
+@use '@/styles/variables' as *;
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.row {
+  display: flex;
+  align-items: flex-start;
+  gap: $spacing-sm;
+  padding: $spacing-sm $spacing-md;
+  background: $gray-50;
+  border: 0.5px solid $gray-200;
+  border-radius: $radius-lg;
+  cursor: pointer;
+  transition: background 0.15s ease;
+
+  &:hover {
+    background: $red-light;
+    border-color: $red-mid;
+  }
+}
+
+.checkbox {
+  width: 18px;
+  height: 18px;
+  border: 1.5px solid $gray-400;
+  border-radius: 4px;
+  background: $white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+  transition: all 0.15s ease;
+
+  svg {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+.checked {
+  background: $red;
+  border-color: $red;
+}
+
+.text {
+  font-size: $font-xs;
+  color: $gray-600;
+  line-height: 1.6;
+}
+
+.link {
+  color: $red;
+  text-decoration: underline;
+}
+
+.errorMsg {
+  font-size: $font-xs;
+  color: $red;
+  padding-left: $spacing-xs;
+}

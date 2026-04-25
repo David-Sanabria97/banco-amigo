@@ -1,0 +1,16 @@
+@use '@/styles/variables' as *;
+
+.banner {
+  background: $red-light;
+  border-bottom: 0.5px solid $red-mid;
+  padding: 10px $spacing-xl;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.text {
+  font-size: $font-sm;
+  font-weight: 500;
+  color: $red-dark;
+}

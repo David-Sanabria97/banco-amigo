@@ -1,0 +1,12 @@
+@use '@/styles/variables' as *;
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.errorMsg {
+  font-size: $font-xs;
+  color: $red;
+}

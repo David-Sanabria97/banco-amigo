@@ -1,0 +1,44 @@
+@use '@/styles/variables' as *;
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.step {
+  font-size: $font-xs;
+  font-weight: 600;
+  color: $red;
+}
+
+.label {
+  font-size: $font-xs;
+  color: $gray-600;
+}
+
+.bar {
+  display: flex;
+  gap: 6px;
+}
+
+.pip {
+  flex: 1;
+  height: 4px;
+  border-radius: 2px;
+  background: $gray-200;
+  transition: background 0.2s ease;
+}
+
+.active {
+  background: $red;
+}
+.done {
+  background: #c8e6c9;
+}

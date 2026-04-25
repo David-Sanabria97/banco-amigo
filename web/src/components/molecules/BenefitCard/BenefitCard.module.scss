@@ -1,0 +1,44 @@
+@use '@/styles/variables' as *;
+
+.card {
+  background: $gray-50;
+  border: 0.5px solid $gray-200;
+  border-top: 3px solid $red;
+  border-radius: $radius-lg;
+  padding: $spacing-md $spacing-md;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+}
+
+.icon {
+  width: 36px;
+  height: 36px;
+  border-radius: $radius-md;
+  background: $red-light;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    width: 18px;
+    height: 18px;
+    stroke: $red;
+    fill: none;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+}
+
+.title {
+  font-size: $font-sm;
+  font-weight: 600;
+  color: $gray-900;
+}
+
+.description {
+  font-size: $font-xs;
+  color: $gray-600;
+  line-height: 1.5;
+}

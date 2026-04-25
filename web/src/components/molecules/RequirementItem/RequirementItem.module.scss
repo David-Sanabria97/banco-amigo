@@ -1,0 +1,61 @@
+@use '@/styles/variables' as *;
+
+.item {
+  display: flex;
+  align-items: flex-start;
+  gap: $spacing-md;
+  padding: $spacing-sm $spacing-md;
+  background: $gray-50;
+  border: 0.5px solid $gray-200;
+  border-radius: $radius-lg;
+  transition: background 0.15s ease;
+}
+
+.highlight {
+  background: $red-light;
+  border-color: $red-mid;
+
+  .title {
+    color: $red;
+  }
+
+  .icon {
+    background: $red-light;
+    border-color: $red-mid;
+  }
+}
+
+.icon {
+  width: 36px;
+  height: 36px;
+  border-radius: $radius-md;
+  background: $white;
+  border: 0.5px solid $gray-200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  svg {
+    width: 16px;
+    height: 16px;
+    stroke: $red;
+    fill: none;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+}
+
+.title {
+  font-size: $font-sm;
+  font-weight: 600;
+  color: $gray-900;
+  margin-bottom: 2px;
+}
+
+.description {
+  font-size: $font-xs;
+  color: $gray-600;
+  line-height: 1.5;
+}
