@@ -1,0 +1,37 @@
+@use '@/styles/variables' as *;
+
+.actionBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $spacing-sm $spacing-md;
+  background: $gray-50;
+  border: 0.5px solid $gray-200;
+  border-radius: $radius-lg;
+  gap: $spacing-md;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.statusMsg {
+  font-size: $font-sm;
+  color: $gray-600;
+}
+
+.actions {
+  display: flex;
+  gap: $spacing-sm;
+  flex-shrink: 0;
+}
+
+.apiError {
+  background: $red-light;
+  border: 0.5px solid $red-mid;
+  border-radius: $radius-md;
+  padding: $spacing-sm $spacing-md;
+  font-size: $font-sm;
+  color: $red-dark;
+}

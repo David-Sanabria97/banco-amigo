@@ -1,0 +1,86 @@
+@use '@/styles/variables' as *;
+
+.bar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border: 0.5px solid $gray-200;
+  border-radius: $radius-lg;
+  margin: $spacing-lg $spacing-xl;
+  overflow: hidden;
+}
+
+.stat {
+  padding: $spacing-md $spacing-lg;
+  border-right: 0.5px solid $gray-200;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xs;
+
+  &:last-child {
+    border-right: none;
+  }
+}
+
+.icon {
+  width: 32px;
+  height: 32px;
+  border-radius: $radius-md;
+  background: $red-light;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: $spacing-xs;
+
+  svg {
+    width: 16px;
+    height: 16px;
+    stroke: $red;
+  }
+}
+
+.title {
+  font-size: $font-sm;
+  font-weight: 600;
+  color: $gray-900;
+}
+
+.description {
+  font-size: $font-xs;
+  color: $gray-600;
+  line-height: 1.5;
+}
+
+@include tablet {
+  .bar {
+    grid-template-columns: 1fr 1fr;
+    margin: $spacing-md;
+  }
+
+  .stat:nth-child(2) {
+    border-right: none;
+  }
+
+  .stat:nth-child(3) {
+    border-top: 0.5px solid $gray-200;
+  }
+
+  .stat:nth-child(4) {
+    border-top: 0.5px solid $gray-200;
+    border-right: none;
+  }
+}
+
+@include mobile {
+  .bar {
+    grid-template-columns: 1fr;
+  }
+
+  .stat {
+    border-right: none;
+    border-bottom: 0.5px solid $gray-200;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}

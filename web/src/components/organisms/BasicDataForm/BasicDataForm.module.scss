@@ -1,0 +1,118 @@
+@use '@/styles/variables' as *;
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-lg;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: $spacing-xl 40px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+}
+
+.tag {
+  font-size: $font-xs;
+  font-weight: 600;
+  color: $red;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 700;
+  color: $gray-900;
+}
+
+.subtitle {
+  font-size: $font-sm;
+  color: $gray-600;
+  line-height: 1.6;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+}
+
+.sectionLabel {
+  font-size: $font-xs;
+  font-weight: 600;
+  color: $gray-600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.channels {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $spacing-sm;
+}
+
+.divider {
+  border: none;
+  border-top: 0.5px solid $gray-200;
+}
+
+.fieldDocRow {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: $spacing-sm;
+}
+
+.fieldRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $spacing-sm;
+}
+
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.errorMsg {
+  font-size: $font-xs;
+  color: $red;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: $spacing-sm;
+}
+
+.apiError {
+  background: $red-light;
+  border: 0.5px solid $red-mid;
+  border-radius: $radius-md;
+  padding: $spacing-sm $spacing-md;
+  font-size: $font-sm;
+  color: $red-dark;
+}
+
+@include tablet {
+  .form {
+    padding: $spacing-lg $spacing-md;
+  }
+
+  .fieldDocRow {
+    grid-template-columns: 1fr;
+  }
+
+  .fieldRow {
+    grid-template-columns: 1fr;
+  }
+
+  .channels {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,62 @@
+@use '@/styles/variables' as *;
+
+.bar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: $spacing-lg $spacing-xl;
+  border-top: 0.5px solid $gray-200;
+}
+
+.metric {
+  text-align: center;
+  padding: $spacing-sm;
+  border-right: 0.5px solid $gray-200;
+
+  &:last-child {
+    border-right: none;
+  }
+}
+
+.value {
+  font-size: 22px;
+  font-weight: 700;
+  color: $red;
+  margin-bottom: 4px;
+}
+
+.label {
+  font-size: $font-xs;
+  color: $gray-600;
+  line-height: 1.5;
+}
+
+@include tablet {
+  .bar {
+    grid-template-columns: 1fr 1fr;
+    padding: $spacing-md;
+  }
+
+  .metric:nth-child(2) {
+    border-right: none;
+  }
+  .metric:nth-child(3) {
+    border-top: 0.5px solid $gray-200;
+  }
+  .metric:nth-child(4) {
+    border-top: 0.5px solid $gray-200;
+    border-right: none;
+  }
+}
+
+@include mobile {
+  .bar {
+    grid-template-columns: 1fr;
+  }
+  .metric {
+    border-right: none;
+    border-bottom: 0.5px solid $gray-200;
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}

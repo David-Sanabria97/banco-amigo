@@ -1,0 +1,113 @@
+@use '@/styles/variables' as *;
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px $spacing-xl;
+  border-bottom: 3px solid $red;
+  background: $white;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  @include tablet {
+    padding: 12px $spacing-md;
+  }
+}
+
+.logo {
+  font-size: $font-lg;
+  font-weight: 700;
+  color: $red;
+  letter-spacing: -0.01em;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.links {
+  display: flex;
+  gap: $spacing-lg;
+  list-style: none;
+
+  @include tablet {
+    display: none;
+  }
+}
+
+.link {
+  font-size: $font-sm;
+  color: $gray-600;
+  transition: color 0.15s ease;
+  white-space: nowrap;
+
+  &:hover {
+    color: $red;
+  }
+}
+
+.menuBtn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+
+  @include tablet {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  svg {
+    width: 22px;
+    height: 22px;
+    stroke: $gray-900;
+    fill: none;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+  }
+}
+
+.mobileMenu {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: $white;
+  z-index: 200;
+  flex-direction: column;
+  padding: $spacing-xl;
+
+  &.open {
+    display: flex;
+  }
+}
+
+.mobileMenuHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: $spacing-xl;
+}
+
+.mobileLinks {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-lg;
+  margin-bottom: $spacing-xl;
+}
+
+.mobileLink {
+  font-size: $font-lg;
+  font-weight: 500;
+  color: $gray-900;
+  cursor: pointer;
+
+  &:hover {
+    color: $red;
+  }
+}

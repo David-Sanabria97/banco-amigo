@@ -1,0 +1,88 @@
+@use '@/styles/variables' as *;
+
+.card {
+  background: $gray-50;
+  border: 0.5px solid $gray-200;
+  border-radius: $radius-lg;
+  overflow: hidden;
+}
+
+.cardHeader {
+  background: $white;
+  padding: $spacing-sm $spacing-md;
+  border-bottom: 0.5px solid $gray-200;
+  font-size: $font-sm;
+  font-weight: 600;
+  color: $gray-900;
+}
+
+.cardBody {
+  padding: $spacing-md;
+}
+
+.empty {
+  padding: $spacing-md;
+  font-size: $font-sm;
+  color: $gray-600;
+  text-align: center;
+}
+
+.events {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.event {
+  display: flex;
+  gap: $spacing-sm;
+  padding-bottom: $spacing-md;
+
+  &:last-child {
+    padding-bottom: 0;
+  }
+}
+
+.eventLeft {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.eventDot {
+  width: 10px;
+  height: 10px;
+  border-radius: $radius-full;
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.eventLine {
+  width: 1px;
+  flex: 1;
+  background: $gray-200;
+  margin-top: 4px;
+}
+
+.eventContent {
+  flex: 1;
+}
+
+.evTitle {
+  font-size: $font-sm;
+  font-weight: 500;
+  color: $gray-900;
+  margin-bottom: 2px;
+}
+
+.evTime {
+  font-size: 10px;
+  color: $gray-600;
+  font-family: monospace;
+}
+
+.evMeta {
+  font-size: 10px;
+  color: $gray-600;
+  margin-top: 2px;
+}

@@ -1,0 +1,153 @@
+@use '@/styles/variables' as *;
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-lg;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: $spacing-xl 40px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+}
+
+.tag {
+  font-size: $font-xs;
+  font-weight: 600;
+  color: $red;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 700;
+  color: $gray-900;
+}
+
+.subtitle {
+  font-size: $font-sm;
+  color: $gray-600;
+  line-height: 1.6;
+}
+
+.summaryCard {
+  background: $gray-50;
+  border: 0.5px solid $gray-200;
+  border-radius: $radius-lg;
+  overflow: hidden;
+}
+
+.summaryHeader {
+  background: $white;
+  padding: 14px $spacing-md;
+  border-bottom: 0.5px solid $gray-200;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.summaryTitle {
+  font-size: $font-sm;
+  font-weight: 600;
+  color: $gray-900;
+}
+
+.badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: $radius-full;
+  font-size: 10px;
+  font-weight: 600;
+  background: #fff8e1;
+  color: #f57f17;
+  border: 0.5px solid #ffe082;
+}
+
+.summaryBody {
+  padding: $spacing-md;
+}
+
+.summaryGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+
+.summaryItem {
+  padding: 10px $spacing-sm;
+  border-bottom: 0.5px solid $gray-200;
+
+  &:nth-child(odd) {
+    border-right: 0.5px solid $gray-200;
+  }
+  &:nth-last-child(-n + 2) {
+    border-bottom: none;
+  }
+}
+
+.siLabel {
+  font-size: 10px;
+  color: $gray-600;
+  margin-bottom: 3px;
+}
+
+.siValue {
+  font-size: $font-sm;
+  font-weight: 500;
+  color: $gray-900;
+}
+
+.disclaimer {
+  font-size: $font-xs;
+  color: $gray-600;
+  line-height: 1.6;
+  background: $gray-50;
+  border: 0.5px solid $gray-200;
+  border-radius: $radius-md;
+  padding: $spacing-sm $spacing-md;
+}
+
+.apiError {
+  background: $red-light;
+  border: 0.5px solid $red-mid;
+  border-radius: $radius-md;
+  padding: $spacing-sm $spacing-md;
+  font-size: $font-sm;
+  color: $red-dark;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: $spacing-sm;
+}
+
+@include tablet {
+  .wrapper {
+    padding: $spacing-lg $spacing-md;
+  }
+
+  .summaryGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .summaryItem {
+    border-right: none !important;
+    border-bottom: 0.5px solid $gray-200;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  .actions {
+    flex-direction: column-reverse;
+    gap: $spacing-sm;
+  }
+}

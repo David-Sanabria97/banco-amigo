@@ -1,0 +1,138 @@
+@use '@/styles/variables' as *;
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-lg;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: $spacing-xl 40px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+}
+
+.tag {
+  font-size: $font-xs;
+  font-weight: 600;
+  color: $red;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 700;
+  color: $gray-900;
+}
+
+.subtitle {
+  font-size: $font-sm;
+  color: $gray-600;
+  line-height: 1.6;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+}
+
+.sectionLabel {
+  font-size: $font-xs;
+  font-weight: 600;
+  color: $gray-600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.fieldRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $spacing-sm;
+}
+
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.warnMsg {
+  font-size: $font-xs;
+  color: #f57f17;
+}
+
+.capacityBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: $gray-50;
+  border: 0.5px solid $gray-200;
+  border-radius: $radius-lg;
+  padding: $spacing-sm $spacing-md;
+}
+
+.capacityLabel {
+  font-size: $font-xs;
+  color: $gray-600;
+}
+
+.capacityValue {
+  font-size: $font-sm;
+  font-weight: 600;
+  color: #2e7d32;
+}
+
+.capacityNegative {
+  color: $red;
+}
+
+.divider {
+  border: none;
+  border-top: 0.5px solid $gray-200;
+}
+
+.hint {
+  font-size: $font-xs;
+  color: $gray-600;
+  line-height: 1.5;
+
+  strong {
+    color: $gray-900;
+  }
+}
+
+.errorMsg {
+  font-size: $font-xs;
+  color: $red;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: $spacing-sm;
+}
+
+.apiError {
+  background: $red-light;
+  border: 0.5px solid $red-mid;
+  border-radius: $radius-md;
+  padding: $spacing-sm $spacing-md;
+  font-size: $font-sm;
+  color: $red-dark;
+}
+
+@include tablet {
+  .form {
+    padding: $spacing-lg $spacing-md;
+  }
+
+  .fieldRow {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,88 @@
+@use '@/styles/variables' as *;
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-lg;
+}
+
+.title {
+  font-size: $font-xl;
+  font-weight: 700;
+  color: $gray-900;
+}
+
+.highlight {
+  color: $red;
+}
+
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.step {
+  display: flex;
+  gap: $spacing-md;
+  padding-bottom: $spacing-md;
+
+  &:last-child {
+    padding-bottom: 0;
+  }
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.number {
+  width: 28px;
+  height: 28px;
+  border-radius: $radius-full;
+  background: $red;
+  color: $white;
+  font-size: $font-sm;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.line {
+  width: 1px;
+  flex: 1;
+  background: $gray-200;
+  margin-top: 4px;
+}
+
+.content {
+  padding-top: 4px;
+}
+
+.stepTitle {
+  font-size: $font-sm;
+  font-weight: 600;
+  color: $gray-900;
+  margin-bottom: 3px;
+}
+
+.stepDesc {
+  font-size: $font-xs;
+  color: $gray-600;
+  line-height: 1.5;
+}
+
+.link {
+  font-size: $font-sm;
+  font-weight: 500;
+  color: $red;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

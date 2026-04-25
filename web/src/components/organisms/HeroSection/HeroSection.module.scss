@@ -1,0 +1,151 @@
+@use '@/styles/variables' as *;
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 420px;
+}
+
+.left {
+  padding: $spacing-2xl $spacing-xl $spacing-2xl 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: $spacing-md;
+}
+
+.title {
+  font-size: $font-2xl;
+  font-weight: 700;
+  color: $gray-900;
+  line-height: 1.15;
+}
+
+.highlight {
+  color: $red;
+}
+
+.description {
+  font-size: $font-sm;
+  color: $gray-600;
+  line-height: 1.7;
+  max-width: 340px;
+}
+
+.bullets {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+}
+
+.bullet {
+  display: flex;
+  align-items: flex-start;
+  gap: $spacing-sm;
+}
+
+.bulletIcon {
+  width: 32px;
+  height: 32px;
+  border-radius: $radius-full;
+  border: 1.5px solid $red-mid;
+  background: $red-light;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  svg {
+    width: 14px;
+    height: 14px;
+    stroke: $red;
+    fill: none;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+}
+
+.bulletTitle {
+  font-size: $font-sm;
+  font-weight: 600;
+  color: $gray-900;
+}
+
+.bulletDesc {
+  font-size: $font-xs;
+  color: $gray-600;
+}
+
+.actions {
+  display: flex;
+  gap: $spacing-sm;
+  align-items: center;
+  margin-top: $spacing-xs;
+}
+
+.right {
+  background: $red;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 0;
+}
+
+.card {
+  background: $white;
+  border-radius: $radius-xl;
+  padding: $spacing-lg;
+  margin: 0 $spacing-lg $spacing-xl;
+  width: calc(100% - 48px);
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+}
+
+.cardLabel {
+  font-size: $font-sm;
+  font-weight: 600;
+  color: $red;
+  margin-bottom: $spacing-xs;
+}
+
+.cardRow {
+  display: flex;
+  flex-direction: column;
+}
+
+.cardKey {
+  font-size: $font-xs;
+  color: $gray-600;
+}
+
+.cardValue {
+  font-size: 20px;
+  font-weight: 700;
+  color: $gray-900;
+}
+
+@include tablet {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .right {
+    display: none;
+  }
+
+  .left {
+    padding: $spacing-xl $spacing-md;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+
+  .actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
