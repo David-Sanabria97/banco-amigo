@@ -1,0 +1,6 @@
+export enum ApplicationStatus {
+  DRAFT = 'DRAFT',
+  PENDING_VALIDATION = 'PENDING_VALIDATION',
+  FINALIZED = 'FINALIZED',
+  ABANDONED = 'ABANDONED',
+}
