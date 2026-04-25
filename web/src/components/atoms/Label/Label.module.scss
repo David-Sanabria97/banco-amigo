@@ -1,0 +1,15 @@
+@use '@/styles/variables' as *;
+
+.label {
+  font-size: $font-xs;
+  font-weight: 500;
+  color: $gray-600;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.required {
+  color: $red;
+  font-size: $font-xs;
+}

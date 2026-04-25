@@ -1,0 +1,35 @@
+@use '@/styles/variables' as *;
+
+.input {
+  width: 100%;
+  height: 38px;
+  background: $gray-50;
+  border: 0.5px solid $gray-200;
+  border-radius: $radius-md;
+  padding: 0 $spacing-sm;
+  font-size: $font-sm;
+  color: $gray-900;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.15s ease;
+
+  &::placeholder {
+    color: $gray-400;
+  }
+  &:focus {
+    border-color: $red;
+  }
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+.error {
+  border-color: $red;
+  background: $red-light;
+
+  &:focus {
+    border-color: $red-dark;
+  }
+}

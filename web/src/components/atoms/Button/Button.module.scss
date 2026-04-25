@@ -1,0 +1,78 @@
+@use '@/styles/variables' as *;
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $spacing-xs;
+  border: none;
+  border-radius: $radius-md;
+  font-weight: 600;
+  transition:
+    opacity 0.15s ease,
+    transform 0.1s ease;
+
+  &:active {
+    transform: scale(0.98);
+  }
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+// Variantes
+.primary {
+  background: $red;
+  color: $white;
+  &:hover:not(:disabled) {
+    background: $red-dark;
+  }
+}
+
+.outline {
+  background: transparent;
+  color: $red;
+  border: 1.5px solid $red;
+  &:hover:not(:disabled) {
+    background: $red-light;
+  }
+}
+
+.ghost {
+  background: transparent;
+  color: $gray-900;
+  border: none;
+  &:hover:not(:disabled) {
+    color: $red;
+  }
+}
+
+.white {
+  background: $white;
+  color: $red;
+  border: none;
+  font-weight: 700;
+
+  &:hover:not(:disabled) {
+    background: $red-light;
+  }
+}
+
+// Tamaños
+.sm {
+  padding: 6px 14px;
+  font-size: $font-xs;
+}
+.md {
+  padding: 10px 24px;
+  font-size: $font-sm;
+}
+.lg {
+  padding: 13px 32px;
+  font-size: $font-base;
+}

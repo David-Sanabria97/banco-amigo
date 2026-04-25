@@ -1,0 +1,40 @@
+@use '@/styles/variables' as *;
+
+.badge {
+  display: inline-block;
+  padding: 3px 14px;
+  border-radius: $radius-full;
+  font-size: $font-xs;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.default {
+  background: $red-light;
+  color: $red-dark;
+  border: 0.5px solid $red-mid;
+}
+
+.success {
+  background: #e8f5e9;
+  color: #2e7d32;
+  border: 0.5px solid #a5d6a7;
+}
+
+.warning {
+  background: #fff8e1;
+  color: #f57f17;
+  border: 0.5px solid #ffe082;
+}
+
+.danger {
+  background: $red-light;
+  color: $red-dark;
+  border: 0.5px solid $red-mid;
+}
+
+.info {
+  background: #e3f2fd;
+  color: #1565c0;
+  border: 0.5px solid #90caf9;
+}
