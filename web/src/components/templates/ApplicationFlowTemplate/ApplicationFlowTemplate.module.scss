@@ -1,0 +1,31 @@
+@use '@/styles/variables' as *;
+
+.page {
+  min-height: 100vh;
+  background: $gray-100;
+}
+
+.main {
+  padding: $spacing-xl 0;
+}
+
+.container {
+  background: $white;
+  border-radius: $radius-xl;
+  border: 0.5px solid $gray-200;
+  max-width: 720px;
+  margin: 0 auto;
+  box-shadow: $shadow-sm;
+}
+
+@include tablet {
+  .main {
+    padding: $spacing-md 0;
+  }
+
+  .container {
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+  }
+}

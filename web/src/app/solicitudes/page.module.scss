@@ -1,0 +1,201 @@
+@use '@/styles/variables' as *;
+
+.page {
+  min-height: 100vh;
+  background: $gray-100;
+}
+
+.main {
+  padding: $spacing-xl 0;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-lg;
+  padding: 0 $spacing-md;
+}
+
+.headerRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title {
+  font-size: 22px;
+  font-weight: 700;
+  color: $gray-900;
+}
+
+.filters {
+  display: flex;
+  gap: $spacing-sm;
+}
+
+.searchInput {
+  flex: 2;
+  height: 36px;
+  background: $white;
+  border: 0.5px solid $gray-200;
+  border-radius: $radius-md;
+  padding: 0 $spacing-sm;
+  font-size: $font-sm;
+  color: $gray-900;
+  font-family: inherit;
+  outline: none;
+
+  &:focus {
+    border-color: $red;
+  }
+  &::placeholder {
+    color: $gray-400;
+  }
+}
+
+.filterSelect {
+  flex: 1;
+  height: 36px;
+  background: $white;
+  border: 0.5px solid $gray-200;
+  border-radius: $radius-md;
+  padding: 0 $spacing-sm;
+  font-size: $font-sm;
+  color: $gray-900;
+  font-family: inherit;
+  outline: none;
+  cursor: pointer;
+
+  &:focus {
+    border-color: $red;
+  }
+}
+
+.table {
+  border: 0.5px solid $gray-200;
+  border-radius: $radius-lg;
+  overflow: hidden;
+  background: $white;
+}
+
+.tableHead {
+  display: grid;
+  grid-template-columns: 2fr 1.2fr 1fr 1.3fr 1fr;
+  background: $gray-50;
+  border-bottom: 0.5px solid $gray-200;
+}
+
+.tableRow {
+  display: grid;
+  grid-template-columns: 2fr 1.2fr 1fr 1.3fr 1fr;
+  border-bottom: 0.5px solid $gray-200;
+  cursor: pointer;
+  transition: background 0.12s ease;
+
+  &:last-child {
+    border-bottom: none;
+  }
+  &:hover {
+    background: $gray-50;
+  }
+}
+
+.th {
+  padding: 8px $spacing-sm;
+  font-size: 10px;
+  font-weight: 600;
+  color: $gray-600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.td {
+  padding: 10px $spacing-sm;
+  font-size: $font-sm;
+  color: $gray-900;
+  display: flex;
+  align-items: center;
+}
+
+.badge {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: $radius-full;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.pending {
+  background: #fff8e1;
+  color: #f57f17;
+  border: 0.5px solid #ffe082;
+}
+.done {
+  background: #e8f5e9;
+  color: #2e7d32;
+  border: 0.5px solid #a5d6a7;
+}
+.draft {
+  background: $gray-50;
+  color: $gray-600;
+  border: 0.5px solid $gray-200;
+}
+.abandoned {
+  background: $red-light;
+  color: $red-dark;
+  border: 0.5px solid $red-mid;
+}
+
+.loading,
+.empty {
+  padding: $spacing-2xl;
+  text-align: center;
+  font-size: $font-sm;
+  color: $gray-600;
+}
+
+.error {
+  padding: $spacing-md;
+  background: $red-light;
+  border: 0.5px solid $red-mid;
+  border-radius: $radius-md;
+  font-size: $font-sm;
+  color: $red-dark;
+}
+
+@include tablet {
+  .container {
+    padding: 0 $spacing-sm;
+  }
+
+  .filters {
+    flex-direction: column;
+  }
+
+  .tableHead {
+    display: none;
+  }
+
+  .tableRow {
+    grid-template-columns: 1fr 1fr;
+    padding: $spacing-sm;
+    gap: $spacing-xs;
+  }
+
+  .td {
+    padding: 4px $spacing-sm;
+    font-size: $font-xs;
+  }
+}
+
+.retryBtn {
+  background: none;
+  border: none;
+  color: $red;
+  font-size: $font-sm;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0;
+}

@@ -1,0 +1,63 @@
+@use '@/styles/variables' as *;
+
+.page {
+  background: $gray-100;
+}
+
+.fullHeight {
+  min-height: 100vh;
+}
+
+.main {
+  padding: $spacing-xl 0;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: $spacing-2xl $spacing-xl;
+  gap: $spacing-md;
+  text-align: center;
+  min-height: 40vh;
+}
+
+.errorIcon {
+  width: 52px;
+  height: 52px;
+  border-radius: $radius-full;
+  background: $red-light;
+  border: 1.5px solid $red-mid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    width: 26px;
+    height: 26px;
+    stroke: $red;
+  }
+}
+
+.errorMsg {
+  font-size: $font-sm;
+  color: $gray-600;
+  max-width: 360px;
+  line-height: 1.6;
+}
+
+.retryBtn {
+  background: $red;
+  color: $white;
+  border: none;
+  border-radius: $radius-md;
+  padding: $spacing-sm $spacing-lg;
+  font-size: $font-sm;
+  font-weight: 600;
+  cursor: pointer;
+
+  &:hover {
+    background: $red-dark;
+  }
+}

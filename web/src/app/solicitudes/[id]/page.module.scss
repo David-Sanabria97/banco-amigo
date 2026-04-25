@@ -1,0 +1,178 @@
+@use '@/styles/variables' as *;
+
+.page {
+  min-height: 100vh;
+  background: $gray-100;
+}
+
+.main {
+  padding: $spacing-xl 0;
+}
+
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-lg;
+  padding: 0 $spacing-md;
+}
+
+.loading,
+.error {
+  text-align: center;
+  padding: $spacing-2xl;
+  font-size: $font-sm;
+  color: $gray-600;
+}
+
+.back {
+  font-size: $font-sm;
+  color: $gray-600;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0;
+
+  &:hover {
+    color: $red;
+  }
+}
+
+.successBanner {
+  background: #f1f8e9;
+  border: 0.5px solid #aed581;
+  border-radius: $radius-lg;
+  padding: $spacing-md;
+  display: flex;
+  align-items: center;
+  gap: $spacing-md;
+}
+
+.sbIcon {
+  width: 36px;
+  height: 36px;
+  border-radius: $radius-full;
+  background: $white;
+  border: 1.5px solid #aed581;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  svg {
+    width: 18px;
+    height: 18px;
+    stroke: #2e7d32;
+  }
+}
+
+.sbTitle {
+  font-size: $font-sm;
+  font-weight: 600;
+  color: #2e7d32;
+  margin-bottom: 2px;
+}
+
+.sbSub {
+  font-size: $font-xs;
+  color: #558b2f;
+}
+
+.headerRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.title {
+  font-size: 22px;
+  font-weight: 700;
+  color: $gray-900;
+}
+
+.idLabel {
+  font-size: $font-xs;
+  color: $gray-600;
+  font-family: monospace;
+  margin-top: 3px;
+}
+
+.badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: $radius-full;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.pending {
+  background: #fff8e1;
+  color: #f57f17;
+  border: 0.5px solid #ffe082;
+}
+.done {
+  background: #e8f5e9;
+  color: #2e7d32;
+  border: 0.5px solid #a5d6a7;
+}
+.draft {
+  background: $gray-50;
+  color: $gray-600;
+  border: 0.5px solid $gray-200;
+}
+.abandoned {
+  background: $red-light;
+  color: $red-dark;
+  border: 0.5px solid $red-mid;
+}
+
+.twoCol {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $spacing-md;
+}
+
+.card {
+  background: $gray-50;
+  border: 0.5px solid $gray-200;
+  border-radius: $radius-lg;
+  overflow: hidden;
+}
+
+.cardHeader {
+  background: $white;
+  padding: $spacing-sm $spacing-md;
+  border-bottom: 0.5px solid $gray-200;
+  font-size: $font-sm;
+  font-weight: 600;
+  color: $gray-900;
+}
+
+.cardBody {
+  padding: $spacing-md;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+}
+
+.dataRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dk {
+  font-size: $font-xs;
+  color: $gray-600;
+}
+
+.dv {
+  font-size: $font-sm;
+  font-weight: 500;
+  color: $gray-900;
+  text-align: right;
+}
