@@ -15,6 +15,7 @@ import solicitudesService from '@/services/solicitudesService'
 import FormField from '@/components/molecules/FormField'
 import ChannelCard from '@/components/molecules/ChannelCard'
 import StepIndicator from '@/components/molecules/StepIndicator'
+import AdvisorField from '@/components/molecules/AdvisorField'
 import Button from '@/components/atoms/Button'
 import Label from '@/components/atoms/Label'
 import Select from '@/components/atoms/Select'
@@ -23,26 +24,37 @@ import { DOCUMENT_TYPES, CITIES } from '@/constants/application.constants'
 
 import styles from './BasicDataForm.module.scss'
 
-const schema = z.object({
-  channel: z.enum(['SELF_SERVICE', 'ASSISTED'] as const, {
-    message: 'Selecciona un canal de atención',
-  }),
-  documentType: z.enum(['CC', 'CE', 'PA'] as const, {
-    message: 'Selecciona el tipo de documento',
-  }),
-  documentNumber: z
-    .string()
-    .min(5, 'Mínimo 5 caracteres')
-    .max(15, 'Máximo 15 caracteres')
-    .regex(/^\d+$/, 'Solo se permiten números'),
-  fullName: z.string().min(3, 'Ingresa tu nombre completo').max(100, 'Nombre demasiado largo'),
-  phone: z
-    .string()
-    .length(10, 'El celular debe tener 10 dígitos')
-    .regex(/^\d+$/, 'Solo se permiten números'),
-  email: z.string().email('Ingresa un correo electrónico válido'),
-  city: z.string().min(1, 'Selecciona una ciudad'),
-})
+const schema = z
+  .object({
+    channel: z.enum(['SELF_SERVICE', 'ASSISTED'] as const, {
+      message: 'Selecciona un canal de atención',
+    }),
+    documentType: z.enum(['CC', 'CE', 'PA'] as const, {
+      message: 'Selecciona el tipo de documento',
+    }),
+    advisorId: z.string().optional(),
+    documentNumber: z
+      .string()
+      .min(5, 'Mínimo 5 caracteres')
+      .max(15, 'Máximo 15 caracteres')
+      .regex(/^\d+$/, 'Solo se permiten números'),
+    fullName: z.string().min(3, 'Ingresa tu nombre completo').max(100, 'Nombre demasiado largo'),
+    phone: z
+      .string()
+      .length(10, 'El celular debe tener 10 dígitos')
+      .regex(/^\d+$/, 'Solo se permiten números'),
+    email: z.string().email('Ingresa un correo electrónico válido'),
+    city: z.string().min(1, 'Selecciona una ciudad'),
+  })
+  .superRefine((data, ctx) => {
+    if (data.channel === 'ASSISTED' && !data.advisorId?.trim()) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: 'El código del asesor es requerido en canal asistido',
+        path: ['advisorId'],
+      })
+    }
+  })
 
 type BasicDataFormValues = z.infer<typeof schema>
 
@@ -91,6 +103,7 @@ export default function BasicDataForm() {
           phone: data.phone,
           email: data.email,
           city: data.city,
+          advisorId: data.advisorId,
         })
         dispatch(updateFormData(data))
         dispatch(setStep(2))
@@ -103,6 +116,7 @@ export default function BasicDataForm() {
           phone: data.phone,
           email: data.email,
           city: data.city,
+          advisorId: data.advisorId,
         })
         dispatch(updateFormData(data))
         dispatch(setApplicationId(application.id))
@@ -146,6 +160,13 @@ export default function BasicDataForm() {
         </div>
         {errors.channel && <span className={styles.errorMsg}>{errors.channel.message}</span>}
       </div>
+      {selectedChannel === 'ASSISTED' && (
+        <AdvisorField
+          value={watch('advisorId') ?? ''}
+          onChange={(val) => setValue('advisorId', val)}
+          error={errors.advisorId?.message}
+        />
+      )}
 
       <hr className={styles.divider} />
 

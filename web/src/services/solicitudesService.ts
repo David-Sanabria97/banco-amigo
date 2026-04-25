@@ -32,6 +32,7 @@ export interface CreateApplicationPayload {
   phone: string
   email: string
   city: string
+  advisorId?: string
 }
 export interface UpdateApplicationPayload {
   channel?: string
@@ -47,6 +48,7 @@ export interface UpdateApplicationPayload {
   termMonths?: number
   loanPurpose?: string
   dataConsentAccepted?: boolean
+  advisorId?: string
 }
 
 export interface SimulationResult {
@@ -61,6 +63,7 @@ export interface Application {
   id: string
   status: string
   channel: string
+  advisorId?: string
   documentType: string
   documentNumber: string
   fullName: string

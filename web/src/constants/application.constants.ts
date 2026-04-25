@@ -1,10 +1,12 @@
 export const DOCUMENT_TYPES = [
+  { value: '', label: '' },
   { value: 'CC', label: 'CC - Cédula de ciudadanía' },
   { value: 'CE', label: 'CE - Cédula de extranjería' },
   { value: 'PA', label: 'PA - Pasaporte' },
 ]
 
 export const CITIES = [
+  { value: '', label: '' },
   { value: 'bogota', label: 'Bogotá' },
   { value: 'medellin', label: 'Medellín' },
   { value: 'cali', label: 'Cali' },
@@ -22,6 +24,7 @@ export const TERM_OPTIONS = [
 ]
 
 export const LOAN_PURPOSE_OPTIONS = [
+  { value: '', label: '' },
   { value: 'viaje', label: 'Viaje familiar' },
   { value: 'educacion', label: 'Educación' },
   { value: 'salud', label: 'Salud' },

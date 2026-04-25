@@ -11,6 +11,7 @@ import Button from '@/components/atoms/Button'
 import { formatCurrency } from '@/utils/formatters'
 
 import styles from './ApplicationSummary.module.scss'
+import { ApplicationChannel } from '@/types/application'
 
 interface SummaryItemProps {
   label: string
@@ -85,6 +86,15 @@ export default function ApplicationSummary() {
         </div>
         <div className={styles.summaryBody}>
           <div className={styles.summaryGrid}>
+            <SummaryItem
+              label="Canal"
+              value={
+                formData.channel === ApplicationChannel.SELF_SERVICE ? 'Autoservicio' : 'Asistido'
+              }
+            />
+            {formData.channel === ApplicationChannel.ASSISTED && (
+              <SummaryItem label="Asesor" value={formData.advisorId ?? '—'} />
+            )}
             <SummaryItem label="Nombre" value={formData.fullName ?? '—'} />
             <SummaryItem
               label="Documento"
@@ -95,7 +105,9 @@ export default function ApplicationSummary() {
             <SummaryItem label="Ciudad" value={formData.city ?? '—'} />
             <SummaryItem
               label="Canal"
-              value={formData.channel === 'SELF_SERVICE' ? 'Autoservicio' : 'Asistido'}
+              value={
+                formData.channel === ApplicationChannel.SELF_SERVICE ? 'Autoservicio' : 'Asistido'
+              }
             />
             <SummaryItem label="Ingresos" value={formatCurrency(formData.monthlyIncome)} />
             <SummaryItem label="Egresos" value={formatCurrency(formData.monthlyExpenses)} />

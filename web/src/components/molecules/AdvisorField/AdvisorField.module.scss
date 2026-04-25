@@ -1,0 +1,118 @@
+@use '@/styles/variables' as *;
+
+.wrapper {
+  background: #f3f8ff;
+  border: 1px solid #90caf9;
+  border-radius: $radius-lg;
+  padding: $spacing-md;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+}
+
+.icon {
+  width: 28px;
+  height: 28px;
+  border-radius: $radius-full;
+  background: #1565c0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  svg {
+    width: 14px;
+    height: 14px;
+    stroke: $white;
+  }
+}
+
+.title {
+  font-size: $font-sm;
+  font-weight: 600;
+  color: #1565c0;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.label {
+  font-size: $font-xs;
+  font-weight: 500;
+  color: #1565c0;
+}
+
+.required {
+  color: $red;
+}
+
+.input {
+  background: $white;
+  border: 0.5px solid #90caf9;
+  border-radius: $radius-md;
+  height: 36px;
+  padding: 0 $spacing-sm;
+  font-size: $font-sm;
+  color: $gray-900;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.15s ease;
+  width: 100%;
+
+  &::placeholder {
+    color: $gray-400;
+  }
+  &:focus {
+    border-color: #1565c0;
+  }
+}
+
+.filled {
+  border-color: #1565c0;
+  background: #e3f2fd;
+}
+
+.error {
+  border-color: $red;
+  background: $red-light;
+}
+
+.errorMsg {
+  font-size: $font-xs;
+  color: $red;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #e3f2fd;
+  border: 0.5px solid #90caf9;
+  border-radius: $radius-full;
+  padding: 4px $spacing-sm;
+  font-size: $font-xs;
+  color: #1565c0;
+  font-weight: 500;
+  width: fit-content;
+
+  svg {
+    width: 12px;
+    height: 12px;
+    stroke: #1565c0;
+  }
+}
+
+.hint {
+  font-size: 10px;
+  color: #1565c0;
+  opacity: 0.8;
+}
